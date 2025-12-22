@@ -10,12 +10,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
 public class Ytest {
-	public static void main(String[] args) throws Throwable {
-		
-		//Changed Name
-		
+
+	@Test
+	public void yT() throws Throwable {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
@@ -23,7 +23,7 @@ public class Ytest {
 		Actions act = new Actions(driver);
 		driver.get("https://www.youtube.com/");
 		driver.findElement(By.name("search_query")).sendKeys("Monica song", Keys.ENTER);
-		driver.findElement(By.xpath("//yt-formatted-string[contains(@aria-label,'Monica - Video Song')]")).click();	
+		driver.findElement(By.xpath("//yt-formatted-string[contains(@aria-label,'Monica - Video Song')]")).click();
 		try {
 			WebElement skip = driver.findElement(By.id("skip-button:2"));
 			if (wait.until(ExpectedConditions.visibilityOf(skip)) != null) {
