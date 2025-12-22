@@ -11,7 +11,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Yt {
+public class Ytest {
 	public static void main(String[] args) throws Throwable {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
