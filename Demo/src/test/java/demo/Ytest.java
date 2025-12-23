@@ -17,6 +17,9 @@ public class Ytest {
 
 	@Test
 	public void yT() throws Throwable {
+		
+		// Changed Jenkins Execution to POLL SCM
+		
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
@@ -31,12 +34,12 @@ public class Ytest {
 				skip.click();
 			}
 		} catch (Exception e) {
-			Reporter.log("No Skip Button",true);
+			Reporter.log("No Skip Button", true);
 		}
 		try {
 			driver.findElement(By.xpath("//button[@aria-label='No thanks']")).click();
 		} catch (Exception e) {
-			Reporter.log("No No Tnx Button",true);
+			Reporter.log("No No Tnx Button", true);
 		}
 		WebElement scrn = driver.findElement(By.id("player"));
 		act.moveToElement(scrn).click();
@@ -50,8 +53,8 @@ public class Ytest {
 		Thread.sleep(2000);
 		driver.navigate().back();
 		Thread.sleep(1000);
-		Reporter.log("Played Monica Song Successfully",true);
-		Reporter.log("### JENKINS EXECUTION CONFIRMED ###",true);
+		Reporter.log("Played Monica Song Successfully", true);
+		Reporter.log("### JENKINS EXECUTION CONFIRMED ###", true);
 		driver.quit();
 	}
 }
