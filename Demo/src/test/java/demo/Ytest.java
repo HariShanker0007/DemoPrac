@@ -10,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 public class Ytest {
@@ -30,12 +31,12 @@ public class Ytest {
 				skip.click();
 			}
 		} catch (Exception e) {
-			System.out.println("No Skip Button");
+			Reporter.log("No Skip Button",true);
 		}
 		try {
 			driver.findElement(By.xpath("//button[@aria-label='No thanks']")).click();
 		} catch (Exception e) {
-			System.out.println("No No Tnx Button");
+			Reporter.log("No No Tnx Button",true);
 		}
 		WebElement scrn = driver.findElement(By.id("player"));
 		act.moveToElement(scrn).click();
@@ -49,8 +50,8 @@ public class Ytest {
 		Thread.sleep(2000);
 		driver.navigate().back();
 		Thread.sleep(1000);
-		System.out.println("Played Monica Song Successfully");
-		System.out.println("### JENKINS EXECUTION CONFIRMED ###");
+		Reporter.log("Played Monica Song Successfully",true);
+		Reporter.log("### JENKINS EXECUTION CONFIRMED ###",true);
 		driver.quit();
 	}
 }
